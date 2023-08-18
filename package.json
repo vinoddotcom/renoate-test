@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/vinoddotcom/renoate-test#readme",
   "dependencies": {
-    "@exampathfinder/auth-layer": "^0.0.18"
+    "@exampathfinder/auth-layer": "^0.0.18",
+    "dotenv": "^16.3.1"
   }
 }
