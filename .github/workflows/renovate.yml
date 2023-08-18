@@ -1,0 +1,27 @@
+name: Renovate
+
+on:
+    push:
+        branches:
+          - "main"
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set Up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Renovate
+        env:
+          PRIVATE_NPM_TOKEN: ${{ secrets.PRIVATE_NPM_TOKEN }}
+        run: npx renovate --token=$PRIVATE_NPM_TOKEN --config=renovate.json

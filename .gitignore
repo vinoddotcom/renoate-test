@@ -1,0 +1,16 @@
+# Folders
+node_modules
+*.log*
+.nuxt
+.nitro
+.cache
+.output
+dist
+
+# Files
+package-lock.json
+
+# ! Uncomment later 
+# jsconfig.json
+# tsconfig.json
+yarn.lock

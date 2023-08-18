@@ -1,0 +1,17 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base"],
+  "token": "${PRIVATE_NPM_TOKEN}",
+  "platform": "github",
+  "npm": {
+    "labels": ["renovate"],
+    "ignoreUnstable": true,
+    "packageRules": [
+      {
+        "matchPackageNames": ["@exampathfinder/auth-layer"],
+        "groupName": "Private Packages"
+      }
+    ]
+  }
+}
+  
