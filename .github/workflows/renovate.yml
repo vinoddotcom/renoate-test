@@ -20,7 +20,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-            sed -i "s/\${TOKEN_FOR_GITHUB}/${{ secrets.TOKEN }}/g" .npmrc
+            sed -i "s/\${TOKEN_FOR_GITHUB}/${{ secrets.PRIVATE_NPM_TOKEN }}/g" .npmrc
             cat .npmrc
             npm ci
 
