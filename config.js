@@ -3,7 +3,7 @@ module.exports = {
       {
         hostType: 'npm',
         baseUrl: "https://github.com/exampathfinder/epf-auth-layer/pkgs/npm/auth-layer",
-        token: ${process.env.PRIVATE_NPM_TOKEN},
+        token: process.env.PRIVATE_NPM_TOKEN,
         authType: "Basic"
       },
     ],
