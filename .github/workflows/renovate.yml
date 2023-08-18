@@ -16,7 +16,7 @@ jobs:
       - name: Set Up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18.12.0
 
       - name: Install Dependencies
         run: |
@@ -27,4 +27,4 @@ jobs:
       - name: Run Renovate
         env:
           PRIVATE_NPM_TOKEN: ${{ secrets.PRIVATE_NPM_TOKEN }}
-        run: npx renovate --token=$PRIVATE_NPM_TOKEN --config=renovate.json
+        run: npx renovate --config=renovate.json
