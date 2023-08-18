@@ -1,17 +1,19 @@
-module.exports = {
-    hostRules :[
-      {
-        hostType: 'npm',
-        baseUrl: "https://github.com/exampathfinder/epf-auth-layer/pkgs/npm/auth-layer",
-        token: process.env.PRIVATE_NPM_TOKEN,
-        authType: "Basic"
-      },
-    ],
+const renovate = require('renovate');
+
+const config = {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base"],
+  "token": process.env.PRIVATE_NPM_TOKEN,
+  "github": {
+    "labels": ["renovate"],
+    "ignoreUnstable": true,
     "packageRules": [
-        {
-           "matchUpdateTypes": ["patch", "minor"],
-           "matchPackagePatterns": ["@exampathfinder/auth-layer"]
-        }
-       ],
-    npmrc : `//npm.pkg.github.com/:_authToken=${process.env.PRIVATE_NPM_TOKEN}`  
-}
+      {
+        "matchPackageNames": ["@exampathfinder/auth-layer"],
+        "groupName": "Private Packages"
+      }
+    ]
+  }
+};
+
+renovate(config);
