@@ -19,7 +19,10 @@ jobs:
           node-version: 14
 
       - name: Install Dependencies
-        run: npm ci
+        run: |
+            sed -i "s/\${TOKEN_FOR_GITHUB}/${{ secrets.TOKEN }}/g" .npmrc
+            cat .npmrc
+            npm ci
 
       - name: Run Renovate
         env:
