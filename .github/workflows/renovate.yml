@@ -22,7 +22,7 @@ jobs:
         run: |
             sed -i "s/\${TOKEN_FOR_GITHUB}/${{ secrets.PRIVATE_NPM_TOKEN }}/g" .npmrc
             cat .npmrc
-            npm ci
+            npm install
 
       - name: Run Renovate
         env:
